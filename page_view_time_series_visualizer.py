@@ -66,7 +66,7 @@ def draw_box_plot():
     month_order = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
     # Draw box plots
-    fig, axes = plt.subplots(1, 2, figsize=(12, 6), sharey=True)
+    fig, axes = plt.subplots(1, 2, figsize=(21, 8))
     sns.boxplot(
         x='year', y='value', data=df_box, ax=axes[0],
         hue='year',
@@ -92,8 +92,8 @@ def draw_box_plot():
 
     axes[0].set_ylim(0, 200000)
     axes[0].set_yticks(range(0, 200001, 20000))
-    axes[0].tick_params(axis='y', labelrotation=0)
-
+    axes[1].set_ylim(0, 200000)
+    axes[1].set_yticks(range(0, 200001, 20000))
     axes[1].tick_params(axis='x', rotation=0, pad=6)
     fig.tight_layout()
     # Save image and return fig
